@@ -1,0 +1,281 @@
+.public-booking {
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.booking-container {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 0.4rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #000000;
+}
+
+.booking-header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.booking-header .duration {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.booking-header .description {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.booking-step {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.booking-step h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.selected-date {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* Calendar Styles */
+.calendar-container {
+  margin-bottom: 1.5rem;
+}
+
+.calendar {
+  background: #f9fafb;
+  border-radius: 0.375rem;
+  padding: 1rem;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+.calendar-header span {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.weekdays > div {
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.days > div {
+  aspect-ratio: 1;
+}
+
+.days button {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #d1d5db;
+  background: white;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  color: #9ca3af;
+}
+
+.days button.available {
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.days button.available:hover {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.days button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Time Slots */
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.time-slot {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+}
+
+.time-slot:hover {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.time-slot.selected {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.no-slots {
+  text-align: center;
+  color: #6b7280;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Booking Summary */
+.booking-summary {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #3b82f6;
+}
+
+.booking-summary p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.booking-summary strong {
+  color: #1f2937;
+}
+
+/* Confirmation */
+.confirmation {
+  text-align: center;
+}
+
+.confirmation-icon {
+  font-size: 3rem;
+  color: #10b981;
+  margin: 1rem 0;
+}
+
+.confirmation-details {
+  background: #f0fdf4;
+  padding: 1.5rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: #1f2937;
+}
+
+.detail {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+}
+
+.datetime {
+  font-weight: 600;
+  color: #1f2937;
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.duration {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Button Layout */
+.booking-step form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.booking-step button {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .time-slots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-container {
+    padding: 1rem;
+  }
+}

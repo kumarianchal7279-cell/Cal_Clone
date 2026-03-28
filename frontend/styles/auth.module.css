@@ -1,0 +1,185 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666666;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+.error {
+  background-color: #ffffff;
+  color: #ff0000;
+  padding: 12px;
+  border: 2px solid #ff0000;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #000000;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.input::placeholder {
+  color: #999999;
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.button:hover:not(:disabled) {
+  background: #333333;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.divider {
+  text-align: center;
+  color: #999999;
+  margin: 24px 0;
+  font-size: 14px;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 20px);
+  height: 1px;
+  background-color: #cccccc;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.buttonSecondary {
+  width: 100%;
+  padding: 12px;
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buttonSecondary:hover {
+  background: #f0f0f0;
+}
+
+.demoBox {
+  margin-top: 30px;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  border-left: 4px solid #000000;
+}
+
+.demoTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.demoBox p {
+  font-size: 13px;
+  color: #4b5563;
+  margin: 4px 0;
+  font-family: 'Courier New', monospace;
+}
+
+.demoBox strong {
+  color: #111827;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+}

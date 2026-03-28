@@ -1,0 +1,110 @@
+.loading {
+  padding: 40px 20px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.pageSubtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0 0 30px 0;
+  line-height: 1.6;
+}
+
+.selector {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.selector label {
+  font-weight: 500;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.selector select {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  min-width: 250px;
+  transition: all 0.2s;
+}
+
+.selector select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.empty p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0 0 20px 0;
+}
+
+.createBtn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.createBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 24px;
+  }
+
+  .pageTitle {
+    font-size: 24px;
+  }
+
+  .selector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .selector select {
+    width: 100%;
+    min-width: unset;
+  }
+}

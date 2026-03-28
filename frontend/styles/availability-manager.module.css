@@ -1,0 +1,176 @@
+.container {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 20px 0;
+}
+
+.weekGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.dayCard {
+  padding: 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+}
+
+.dayCard:hover {
+  border-color: #667eea;
+  background: #f8f9fa;
+}
+
+.dayCard.active {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+.dayCard.selected {
+  border-color: #667eea;
+  background: #ede9fe;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.dayName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.dayTime {
+  font-size: 12px;
+  color: #10b981;
+  font-weight: 500;
+}
+
+.dayTimeEmpty {
+  font-size: 12px;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modalContent h4 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: #111827;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.btnSave,
+.btnDelete,
+.btnCancel {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnSave {
+  background: #10b981;
+  color: white;
+}
+
+.btnSave:hover {
+  background: #059669;
+}
+
+.btnDelete {
+  background: #ef4444;
+  color: white;
+}
+
+.btnDelete:hover {
+  background: #dc2626;
+}
+
+.btnCancel {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btnCancel:hover {
+  background: #d1d5db;
+}
+
+.loading {
+  padding: 20px;
+  text-align: center;
+  color: #6b7280;
+}

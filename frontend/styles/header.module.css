@@ -1,0 +1,60 @@
+.header {
+  background: #000000;
+  color: #ffffff;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greeting {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.greeting strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.logoutButton {
+  background: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logoutButton:hover {
+  background: #cc0000;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .greeting {
+    font-size: 18px;
+  }
+
+  .logoutButton {
+    width: 100%;
+  }
+}
