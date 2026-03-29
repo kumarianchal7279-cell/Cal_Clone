@@ -24,13 +24,25 @@ export async function register(req: Request, res: Response) {
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create user
-    const result = await db.query(
-      `INSERT INTO users (email, password, firstName, lastName, createdAt, updatedAt)
-       VALUES ($1, $2, $3, $4, NOW(), NOW())
-       RETURNING id, email, firstName, lastName`,
-      [email, hashedPassword, firstName || '', lastName || '']
-    );
+    // Create user (supports both schema formats)
+    let result;
+    try {
+      // Try new schema with UUID and password_hash
+      result = await db.query(
+        `INSERT INTO users (email, password_hash, name, timezone, created_at, updated_at)
+         VALUES ($1, $2, $3, $4, NOW(), NOW())
+         RETURNING id, email, name`,
+        [email, hashedPassword, `${firstName || ''} ${lastName || ''}`.trim(), 'America/New_York']
+      );
+    } catch (error) {
+      // Fallback to old schema with camelCase
+      result = await db.query(
+        `INSERT INTO users (email, password, firstName, lastName, createdAt, updatedAt)
+         VALUES ($1, $2, $3, $4, NOW(), NOW())
+         RETURNING id, email, firstName, lastName`,
+        [email, hashedPassword, firstName || '', lastName || '']
+      );
+    }
 
     const user = result.rows[0];
 
@@ -74,8 +86,14 @@ export async function login(req: Request, res: Response) {
 
     const user = result.rows[0];
 
-    // Check password
-    const passwordMatch = await bcrypt.compare(password, user.password);
+    // Check password (handles both "password" and "password_hash" columns)
+    const hashedPassword = user.password_hash || user.password;
+    if (!hashedPassword) {
+      console.error('No password hash found for user:', email);
+      return res.status(401).json({ message: 'Invalid email or password' });
+    }
+    
+    const passwordMatch = await bcrypt.compare(password, hashedPassword);
     if (!passwordMatch) {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
