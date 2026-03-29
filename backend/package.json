@@ -4,6 +4,7 @@
   "description": "Cal.com clone backend",
   "main": "src/index.js",
   "scripts": {
+    "build": "tsc",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "db:setup": "node database/setup.js",
